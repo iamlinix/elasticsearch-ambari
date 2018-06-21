@@ -1,39 +1,37 @@
-## Elasticsearch Service for Ambari
+## Original Repo | 原地址
 
-A custom service for Ambari which allows you to install and manage Elasticsearch via Ambari.  This service is not supported by Hortonworks. Futhermore, this service is intended for testing and development and should not be used in a production environment.
+```
+https://github.com/teamsoo/elasticsearch-ambari
+```
 
-## Compatibility
+## Compatibility | 兼容性
 
 This service has been tested with the following:
+该服务仅在以下环境中测试通过：
 
-- CentOS 7.x
-- Ambari 2.5,2.6
-- HDP/HDF 2.x/3.x
+- Ubuntu 16.04
+- Ambari 2.6
+- HDP 2.6
 - ElasticSearch 6.x
 
-## Installation
-
-To install this service, you need access to the Ambari Server with sudo permissions.
+## Installation | 安装
 
 ```
 VERSION=`hdp-select status hadoop-client | sed 's/hadoop-client - \([0-9]\.[0-9]\).*/\1/'`
-sudo git clone https://github.com/teamsoo/elasticsearch-ambari /var/lib/ambari-server/resources/stacks/HDP/$VERSION/services/ELASTICSEARCH
+sudo git clone https://github.com/iamlinix/elasticsearch-ambari.git /var/lib/ambari-server/resources/stacks/HDP/$VERSION/services/ELASTICSEARCH
 ```
 
-If you do not have the ability to use git, you can download the repo archive and extract it to directory shown above.
-
-After you have installed the service, you need to restart the Ambari Server.
-
+## Required Properties | 值得注意的属性
 ```
-sudo service ambari-server restart
-```
-
-Once the Ambari Server has been restarted, you should see Elasticsearch as an available service to install from the Add Service screen.
-
-## Required property
-```
-zen_discovery_ping_unicast_hosts - FQDN of master and data nodes. seperated by comma eg. master.internal,data1.internal,data2.internal
+zen_discovery_ping_unicast_hosts - FQDN of master and data nodes. seperated by comma eg. master.internal,data1.internal,data2.internal (集群所有节点的主机名，以逗号连接，例如： master.internal,data1.internal,data2.internal)
+network_host - ethernet interface or ip address to bind. (需要绑定的网上名称或是 ip 地址)
+http_port - port to bind. (需要绑定的端口)
+elastic_repo - repository url for elasticsearch. (下载 elasticsearch 的源的地址)
 ```
 
-## License
-This project is based on Elasticsearch Ambari Service of <https://github.com/apache/incubator-metron/tree/master/metron-deployment/packaging/ambari/metron-mpack/src/main/resources/common-services/ELASTICSEARCH>
+## Screenshot | 截图
+![Image](../master/screenshot.png?raw=true)
+
+
+check my first commit for more details.
+查看我的第一个 commit 了解更多的修改细节。
