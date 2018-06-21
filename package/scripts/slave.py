@@ -18,6 +18,7 @@ limitations under the License.
 
 """
 
+from resource_management.core.resources.system import Execute
 from resource_management.core.resources.system import Directory
 from resource_management.core.resources.system import File
 from resource_management.core.source import InlineTemplate
@@ -57,9 +58,10 @@ def slave():
          group=params.elastic_user
          )
 
-    print "Master sysconfig: /etc/sysconfig/elasticsearch"
-    File(format("/etc/sysconfig/elasticsearch"),
+    print "Master default: /etc/default/elasticsearch"
+    File(format("/etc/default/elasticsearch"),
          owner="root",
          group="root",
          content=InlineTemplate(params.sysconfig_template)
          )
+    Execute("chmod 0644 /etc/default/elasticsearch")

@@ -20,6 +20,11 @@
 
 <configuration>
     <property>
+        <name>elastic_repo</name>
+        <value>https://artifacts.elastic.co/packages/6.x/apt</value>
+        <description>Elasticsearch repository url</description>
+    </property>
+    <property>
         <name>elastic_home</name>
         <value>/usr/share/elasticsearch/</value>
         <description>Elasticsearch Home Directory</description>

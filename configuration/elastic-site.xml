@@ -161,7 +161,7 @@
     </property>
     <property>
         <name>cluster_routing_allocation_disk_watermark_high</name>
-        <value>0.99</value>
+        <value>0.90</value>
         <description>Property used when multiple drives are used to understand max thresholds</description>
     </property>
     <property>
@@ -171,7 +171,7 @@
     </property>
    <property>
         <name>cluster_routing_allocation_disk_watermark_low</name>
-        <value>.97</value>
+        <value>0.80</value>
         <description>Property used when multiple drives are used to understand min thresholds</description>
     </property>
     <property>

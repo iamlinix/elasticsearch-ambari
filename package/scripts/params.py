@@ -30,6 +30,7 @@ conf_dir = config['configurations']['elastic-sysconfig']['conf_dir']
 heap_size = config['configurations']['elastic-sysconfig']['heap_size']
 max_open_files = config['configurations']['elastic-sysconfig']['max_open_files']
 max_map_count = config['configurations']['elastic-sysconfig']['max_map_count']
+repo_url = config['configurations']['elastic-sysconfig']['elastic_repo']
 
 elastic_user = config['configurations']['elastic-env']['elastic_user']
 user_group = config['configurations']['elastic-env']['user_group']

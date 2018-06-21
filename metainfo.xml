@@ -22,7 +22,7 @@
             <name>AMBARI_ELASTICSEARCH</name>
             <displayName>Elasticsearch</displayName>
             <comment>Indexing and Search</comment>
-            <version>6.0</version>
+            <version>6.x</version>
             <components>
                 <component>
                     <name>ES_MASTER</name>
@@ -52,16 +52,11 @@
                     <osFamily>any</osFamily>
                     <packages>
                         <package>
-                            <name>elasticsearch-6.0</name>
+                            <name>elasticsearch</name>
                         </package>
                     </packages>
                 </osSpecific>
             </osSpecifics>
-            <commandScript>
-                <script>scripts/service_check.py</script>
-                <scriptType>PYTHON</scriptType>
-                <timeout>300</timeout>
-            </commandScript>
             <configuration-dependencies>
                 <config-type>elastic-env</config-type>
                 <config-type>elastic-site</config-type>
